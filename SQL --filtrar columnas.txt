@@ -1,0 +1,64 @@
+SELECT * --filtrar columnas
+FROM scott.emp
+INNER JOIN scott.dept ON emp.deptno = dept.deptno -- enlazamos 2 tablas
+
+SELECT * --filtrar columnas
+FROM scott.emp
+
+
+SELECT * --filtrar columnas
+FROM scott.dept
+
+    
+
+SELECT *
+FROM scott.emp
+INNER JOIN scott.dept ON emp.deptno = dept.deptno -- enlazamos 2 tablas
+WHERE DNAME = 'RESEARCH'
+
+SELECT *
+FROM scott.emp
+WHERE EMPNO = 7844
+
+
+SELECT EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DNAME, LOC
+FROM scott.emp
+INNER JOIN scott.dept ON emp.deptno = dept.deptno -- enlazamos 2 tablas
+WHERE JOB = 'MANAGER' AND LOC = 'CHICAGO'
+
+
+SELECT ENAME, SAL
+FROM scott.emp
+INNER JOIN scott.dept ON emp.deptno = dept.deptno -- enlazamos 2 tablas
+WHERE LOC = 'NEW YORK' AND SAL > 2000
+ORDER BY SAL DESC
+
+
+
+
+create sequence Usuario_Seq1
+start with 1
+increment by 1
+/
+    
+    
+insert into Usuarios (ID, Nombre)
+values (USUARIO_SEQ1.nextval, 'Gorka')
+
+select current_date from dual
+
+
+select * from Usuarios -- Para visualizar la tabla
+
+    
+insert into Usuarios (ID, Nombre)
+values (USUARIO_SEQ1.nextval, 'Gorka')-- insertar Gorka pero sumando el ID
+
+select current_date from dual
+
+UPDATE Usuarios
+SET Nombre = 'Juan'
+WHERE ID = 1 --cambiará el primero a Juan
+
+DELETE FROM Usuarios
+WHERE ID = 1 --Borramos el ID 1
